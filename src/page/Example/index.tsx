@@ -4,7 +4,7 @@ import intl from 'react-intl-universal';
 import './index.less'
 
 export interface Iprops {
-    dispatch:any
+    
 }
 
 const translator: React.FC<Iprops> = (props: Iprops) => {
@@ -18,13 +18,4 @@ const translator: React.FC<Iprops> = (props: Iprops) => {
     )
 }
 
-const mapStateToProps = (state:any) => {
-    return state
-  }
-  const mapDispatchToProps = (dispatch:any) => {
-    return { dispatch }
-  }
-  
-  export default connect(
-    mapStateToProps, mapDispatchToProps
-  )(translator)
+export default translator

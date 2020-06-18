@@ -19,13 +19,13 @@ export const routerConfig:routerConfigModel[] = [
     {
         path: '/',
         component:Example,
-        auth:true,
+        auth:false,
         meta:{title:'主页',role:'home-index'},
     },
     {
         path: '/example',
         component:Example,
-        auth:true,
+        auth:false,
         meta:{title:'示例模块',role:'example-index'},
     }
 ]
