@@ -10,27 +10,19 @@ import {SiderMenu} from './SiderMenu'
 
 import { routerConfig } from '../../router/config';
 import {RootState} from '../../store/reducer';
-import {logout} from '../login/store/actions'
 import "./index.scss"
 
 export interface ComponentProps {
     history:History,
-    dispatch:Dispatch
 }
 
 const LayoutComponent: React.FC<ComponentProps> = (props: ComponentProps) => {
     const { Sider } = Layout;
-    const { dispatch } = props;
 
-    const headerCbs = useMemo(()=>{
-        return bindActionCreators({
-            logout
-        },dispatch)
-    },[dispatch])
 
     return (
         <Layout className="LayoutWrapper">
-            <MainHeader {...headerCbs} {...props}/>
+            <MainHeader {...props}/>
             <Layout>
                 <Sider>
                     <SiderMenu config={routerConfig} {...props}/>
@@ -40,15 +32,4 @@ const LayoutComponent: React.FC<ComponentProps> = (props: ComponentProps) => {
         </Layout>
     );
 }
-
-const mapStateToProps = (state:RootState) => {
-    return state.login
-  }
-  const mapDispatchToProps = (dispatch:Dispatch) => {
-    return { dispatch }
-  }
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(LayoutComponent);
+export default LayoutComponent

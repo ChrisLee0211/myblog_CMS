@@ -2,12 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { ApolloProvider } from "react-apollo";
-import ApolloClient from "apollo-boost";
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient,{gql} from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
+const cache = new InMemoryCache();
+cache.writeData({
+    data: {
+      todos: [],
+      visibilityFilter: 'SHOW_ALL',
+      islogin:false,
+      networkStatus: {
+        __typename: 'NetworkStatus',
+        isConnected: false,
+      },
+    },
+  });
 const client = new ApolloClient({
-    uri: "http://localhost:3000/"
+    uri: "https://48p1r2roz4.sse.codesandbox.io",
+    cache,
+    resolvers: { 
+     },
 });
 
 ReactDOM.render(

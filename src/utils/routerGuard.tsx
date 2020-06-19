@@ -14,7 +14,7 @@ class FrontendAuth extends React.Component<any,propsModel>{
     render(){
         const { location,path,component:Component } = this.props;
         const { pathname } = location;
-        const isLogin: boolean = store.getState().login.isLogin || localStorage.getItem('token')?true:false;
+        const isLogin: boolean =  localStorage.getItem('token')?true:false;
 
         // 如果该路由不用进行权限校验，登录状态下登陆页除外
         // 因为登陆后，无法跳转到登陆页

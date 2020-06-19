@@ -5,14 +5,13 @@ import {History} from 'history'
 
 export interface ComponentProps {
     history:History,
-    setloginStatus:Function,
 }
 
 
 
 const LoginForm: React.FC<ComponentProps> = (props: ComponentProps) => {
 
-    const {history,setloginStatus}  = props;
+    const {history}  = props;
 
     const [UserName,setUserName] = useState('');
     const [Password,setPassword] = useState('');
@@ -25,9 +24,8 @@ const LoginForm: React.FC<ComponentProps> = (props: ComponentProps) => {
             message.error('请输入用户名与密码');
             return
         }
-        setloginStatus(true)
         history.push('/');
-    },[UserName, Password, setloginStatus,, history])
+    },[UserName, Password, history])
     
     /**
      * 监听回车触发表单提交

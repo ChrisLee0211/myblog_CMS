@@ -8,22 +8,19 @@ import { Dispatch } from 'redux';
 
 export interface ComponentProps {
     history:History,
-    logout:Function
-    dispatch:Dispatch
 }
 
 const MainHeader: React.FC<ComponentProps> = (props: ComponentProps) => {
 
     const {Header} = Layout;
-    const {history,logout} = props;
+    const {history} = props;
     const handlelogout = useCallback(()=>{
-        logout()
         history.push('/login')
-    },[history,logout])
+    },[history])
     return (
         <Header className="Layout-Header">
             <div className="Layout-Header-left">
-                react-ts-template
+                个人博客后台
             </div>
             <div className="Layout-Header-right">
                 <div className="user">Hi~</div>
