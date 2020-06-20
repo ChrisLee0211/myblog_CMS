@@ -23,6 +23,15 @@ const client = new ApolloClient({
     uri: "https://48p1r2roz4.sse.codesandbox.io",
     cache,
     resolvers: { 
+        Query: {
+            isLogin(root,args,ctx,info){
+                console.log("root",root)
+                console.log("args",args)
+                console.log("ctx",ctx)
+                console.log("info",info);
+                return false
+            }
+        }
      },
 });
 
