@@ -12,7 +12,7 @@ cache.writeData({
     data: {
       todos: [],
       visibilityFilter: 'SHOW_ALL',
-      islogin:false,
+      isLogin:false,
       networkStatus: {
         __typename: 'NetworkStatus',
         isConnected: false,
@@ -30,6 +30,14 @@ const client = new ApolloClient({
                 console.log("ctx",ctx)
                 console.log("info",info);
                 return false
+            }
+        },
+        Mutation: {
+            setLoginStatus(root,args,ctx,info){
+                console.log("root",root)
+                console.log("args",args)
+                console.log("ctx",ctx)
+                console.log("info",info);
             }
         }
      },
