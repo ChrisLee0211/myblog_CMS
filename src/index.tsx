@@ -24,16 +24,12 @@ const client = new ApolloClient({
     cache,
     resolvers: { 
         Query: {
-            isLogin(root,args,ctx,info){
-                console.log("root",root)
-                console.log("args",args)
-                console.log("ctx",ctx)
-                console.log("info",info);
-                return false
-            }
+           
         },
         Mutation: {
             setLoginStatus(root,args,ctx,info){
+                const {status,q} = args;
+                ctx.client.writeQuery({query:q,data:{isLogin:status}});
                 console.log("root",root)
                 console.log("args",args)
                 console.log("ctx",ctx)
