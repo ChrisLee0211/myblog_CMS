@@ -3,41 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient,{gql} from "apollo-boost";
+import client from "./store";
 import * as serviceWorker from './serviceWorker';
-import { InMemoryCache } from 'apollo-cache-inmemory';
 
-const cache = new InMemoryCache();
-cache.writeData({
-    data: {
-      todos: [],
-      visibilityFilter: 'SHOW_ALL',
-      isLogin:false,
-      networkStatus: {
-        __typename: 'NetworkStatus',
-        isConnected: false,
-      },
-    },
-  });
-const client = new ApolloClient({
-    uri: "https://48p1r2roz4.sse.codesandbox.io",
-    cache,
-    resolvers: { 
-        Query: {
-           
-        },
-        Mutation: {
-            setLoginStatus(root,args,ctx,info){
-                const {status,q} = args;
-                ctx.client.writeQuery({query:q,data:{isLogin:status}});
-                console.log("root",root)
-                console.log("args",args)
-                console.log("ctx",ctx)
-                console.log("info",info);
-            }
-        }
-     },
-});
+
 
 ReactDOM.render(
     <ApolloProvider client={client}>

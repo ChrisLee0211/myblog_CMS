@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Route,Redirect, withRouter } from 'react-router-dom';
 import {routerConfig} from '../router/config';
-import store from '../store'
-
-
+import client from "../store/index";
+import {GET_LOGIN_STATUS} from "@/page/login/store/gql";
 interface propsModel {
     config:any[],
     path:string,
@@ -14,7 +13,8 @@ class FrontendAuth extends React.Component<any,propsModel>{
     render(){
         const { location,path,component:Component } = this.props;
         const { pathname } = location;
-        const isLogin: boolean =  localStorage.getItem('token')?true:false;
+        const loginStore = client.readQuery({query:GET_LOGIN_STATUS});
+        const isLogin: boolean =  localStorage.getItem('token') || loginStore.isLogin;
 
         // 如果该路由不用进行权限校验，登录状态下登陆页除外
         // 因为登陆后，无法跳转到登陆页

@@ -25,7 +25,7 @@ export const routerConfig:routerConfigModel[] = [
     {
         path: '/example',
         component:Example,
-        auth:false,
+        auth:true,
         meta:{title:'示例模块',role:'example-index'},
     }
 ]

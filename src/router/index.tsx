@@ -11,7 +11,7 @@ export class Router extends React.Component{
         return (
             <HashRouter>
                 <Switch>
-                    {/* <Route exact path="/login" component={Login}/> */}
+                    <Route exact path="/login" component={Login}/>
                     <Route exact path="/404" component={NotFound}/>
                     <FrontendAuth path="/" component={LayouComponent}  />
                 </Switch>

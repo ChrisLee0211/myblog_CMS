@@ -1,15 +1,12 @@
 import React, {useMemo } from 'react';
-import { Dispatch, bindActionCreators } from 'redux';
 import { Layout } from 'antd';
 import { History } from 'history'
-import {connect} from 'react-redux'
 
 import {MainContent} from './MainContent';
 import MainHeader from './MainHeader';
 import {SiderMenu} from './SiderMenu'
 
 import { routerConfig } from '../../router/config';
-import {RootState} from '../../store/reducer';
 import "./index.scss"
 
 export interface ComponentProps {
