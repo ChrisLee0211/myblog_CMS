@@ -1,5 +1,5 @@
 import Example from '../page/Example'
-
+import Articles from "../page/Articles"
 
 export interface routerConfigModel {
     path:string,
@@ -18,14 +18,20 @@ interface MetaItem {
 export const routerConfig:routerConfigModel[] = [
     {
         path: '/',
-        component:Example,
+        component:Articles,
         auth:false,
         meta:{title:'主页',role:'home-index'},
     },
+    // {
+    //     path: '/example',
+    //     component:Example,
+    //     auth:true,
+    //     meta:{title:'示例模块',role:'example-index'},
+    // },
     {
-        path: '/example',
-        component:Example,
+        path: '/Articles',
+        component:Articles,
         auth:true,
-        meta:{title:'示例模块',role:'example-index'},
+        meta:{title:'文章管理',role:'articles-index'},
     }
 ]

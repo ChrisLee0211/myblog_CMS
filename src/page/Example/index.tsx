@@ -13,6 +13,7 @@ function ExchangeRates() {
   return (
       <div>
           {data&&String(data.isLogin)}
+          
       </div>
   )
 }
