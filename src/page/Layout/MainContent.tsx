@@ -12,7 +12,7 @@ export const MainContent: React.FC<ComponentProps> = (props: ComponentProps) => 
     const {config} = props;
     const {Content} = Layout;
     return (
-        <Content>
+        <Content id="Layout-Content">
             <Switch>
             {config.map(ele =>  <Route exact  render={() => <ele.component />} key={ele.path} path={ele.path} />)}
             <Redirect exact from="/" to="/trans" />

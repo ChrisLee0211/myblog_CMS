@@ -38,3 +38,22 @@
     height: 100%;
     @include flex-center;
 }
+
+#Layout-Content{
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    .main-header{
+        width: 100%;
+        height: 10%;
+    }
+    .main-body{
+        width: 100%;
+        height: 80%;
+    }
+    .main-footer{
+        width: 100%;
+        height: 10%;
+    }
+}
