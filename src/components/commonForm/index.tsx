@@ -2,7 +2,6 @@ import React, { useState, useCallback, useMemo } from "react";
 import { Form, Input, Select, Button, InputNumber, DatePicker, Radio, Switch, Upload, Checkbox, Cascader, message } from "antd";
 import { LoadingOutlined, PlusOutlined, UploadOutlined } from "@ant-design/icons";
 import { ValidateErrorEntity } from "rc-field-form/lib/interface";
-import { useForm, FormInstance } from "antd/lib/form/util";
 import intl from "react-intl-universal";
 import "./index.modules.less";
 import { RcFile, UploadChangeParam } from "antd/lib/upload";
@@ -10,6 +9,7 @@ import { UploadFile } from "antd/lib/upload/interface";
 import { parseTime, formatOptions } from "@/utils/index";
 import { useMoment } from "@/utils/hook/useMoment";
 import * as ValidateMessages from "./validateMessages";
+import { FormInstance } from "antd/lib/form";
 
 interface ImagePreviewProps {
     path: string;
@@ -181,7 +181,7 @@ const CommonForm: React.FC<ComponentProps> = (props: ComponentProps) => {
         if (props.instance) {
             return props.instance;
         }
-        const [ins] = useForm();
+        const [ins] = Form.useForm();
         return ins;
     }, []);
     const showBtn: boolean = useMemo(() => {

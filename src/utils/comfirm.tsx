@@ -24,6 +24,7 @@ function Confirm(props: ConfirmParams) {
         },
         onCancel() {
             props.cancel();
+            
         },
     });
 }

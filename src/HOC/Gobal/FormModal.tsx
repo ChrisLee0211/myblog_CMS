@@ -1,9 +1,9 @@
 import React, { useMemo, useState, useCallback, useEffect } from "react";
 import { Modal, Button, Space, Skeleton } from "antd";
 import CommonForm, { ComponentProps as FormType } from "@/components/commonForm";
-import { useForm, FormInstance } from "antd/lib/form/util";
 import intl from "react-intl-universal";
 import { useMoment } from "@/utils/hook/useMoment";
+import Form, { FormInstance } from "antd/lib/form";
 
 interface ExcluedeType {
     formHeight: string;
@@ -26,7 +26,7 @@ const FormModal: React.FC<ComponentProps> = (props: ComponentProps) => {
     const [btnLoading, setBtnLoading] = useState<boolean>(false);
     const realZIndex: number = props.zIndex ?? 1000;
     const realHeight: string = props.height ?? "50vh";
-    const formInstance: FormInstance = useForm()[0];
+    const formInstance: FormInstance = Form.useForm()[0];
     const [toTimeStamp] = useMoment(props.columns);
     const done = useCallback(() => {
         setBtnLoading(false);

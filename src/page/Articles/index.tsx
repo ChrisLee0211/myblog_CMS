@@ -1,4 +1,5 @@
 import React from "react";
+import {Tooltip} from "antd";
 import Icon from "@/components/SvgIcon";
 import "./index.scss"
 
@@ -9,9 +10,21 @@ const Articles:React.FC = () => {
             <section className="main-header">
                 <div className="articles-title">文章管理</div>
                 <div className="articles-btn">
-                    <Icon name="sousuo" />
-                    <Icon name="tianjia" />
-                    <Icon name="shanchuguan" />
+                    <Tooltip placement="topLeft" title={"搜索"}>
+                        <span className="articles-btn-text">
+                            <Icon name="sousuo" />
+                        </span>
+                    </Tooltip>
+                    <Tooltip placement="topLeft" title={"添加"}>
+                        <span className="articles-btn-text">
+                            <Icon name="tianjia" />
+                        </span>
+                    </Tooltip>
+                    <Tooltip placement="topLeft" title={"删除"}>
+                        <span className="articles-btn-text">
+                            <Icon name="shanchuguan" />
+                        </span>
+                    </Tooltip>
                 </div>
             </section>
             <section className="main-body">

@@ -10,5 +10,15 @@
         font-size: 40px;
         font-weight: bolder;
     }
+    &-btn{
+        padding:0  20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        &-text{
+            margin: 0 5px;
+        }
+    }
 
 }
