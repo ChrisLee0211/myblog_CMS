@@ -1,6 +1,7 @@
 import React from "react";
 import {Tooltip} from "antd";
 import Icon from "@/components/SvgIcon";
+import ArticlesTable from "./components/ArticlesTable"
 import "./index.scss"
 
 
@@ -28,7 +29,7 @@ const Articles:React.FC = () => {
                 </div>
             </section>
             <section className="main-body">
-                主体区
+                <ArticlesTable />
             </section>
             <section className="main-footer">
                 底部
