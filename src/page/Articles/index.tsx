@@ -6,6 +6,7 @@ import "./index.scss"
 
 
 const Articles:React.FC = () => {
+    
     return (
         <div className="articles">
             <section className="main-header">
@@ -30,9 +31,6 @@ const Articles:React.FC = () => {
             </section>
             <section className="main-body">
                 <ArticlesTable />
-            </section>
-            <section className="main-footer">
-                底部
             </section>
         </div>
     )
