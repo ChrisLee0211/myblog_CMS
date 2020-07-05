@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import {Table, Button} from "antd";
+import {Table, Space} from "antd";
 import {parseTime} from "@/utils"
 import { ColumnType } from "antd/lib/table";
 import { TableRowSelection } from "antd/lib/table/interface";
@@ -56,10 +56,10 @@ const ArticleTable:React.FC = () =>{
             title:"操作",
             render(){
                 return (
-                    <>
-                    <Button type="text">编辑</Button>
-                    <Button type="text">删除</Button>
-                    </>
+                    <Space size="small">
+                    <a>编辑</a>
+                    <a>查看</a>
+                    </Space>
                 )
             }
         }
